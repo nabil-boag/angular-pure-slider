@@ -1,5 +1,4 @@
 /app/build/
-/app/package/
 /app/src/bower_components/*
 /nbproject/*
 /node_modules/*
@@ -7,4 +6,3 @@
 .DS_Store
 .idea/
 *~
-
