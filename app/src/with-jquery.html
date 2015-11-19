@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tempo slider</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="angular-pure-slider.value-converter.js"></script>
+    <script type="text/javascript" src="angular-pure-slider.js"></script>
+
+    <style>
+      .slider {
+        background-color: #DFF0D8;
+        box-shadow: rgb(201, 216, 194) 0px 1px 0px 0px inset;
+        height: 12px;
+        width: 100%;
+      }
+      .slider-selected {
+        background-color: #5CB85C;
+        box-shadow: rgb(97, 145, 97) 0px 1px 0px 0px inset;
+        float: left;
+        height: 100%;
+      }
+      .slider-pointer {
+        background: #fff;
+        background: linear-gradient(#fff,#f6f6f6) #fff;
+        background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#f6f6f6)) #fff;
+        background: -webkit-linear-gradient(#fff,#f6f6f6) #fff;
+        border-radius: 10px;
+        webkit-border-radius: 10px;
+        box-shadow: -2px 2px 4px rgba(25, 70, 94, 0.6), 0px 2px 8px rgba(25, 70, 94, 0.1);
+        webkit-box-shadow: -2px 2px 4px rgba(25, 70, 94, 0.6), 0px 2px 8px rgba(25, 70, 94, 0.1);
+        cursor: pointer;
+        float: right;
+        height: 50px;
+        margin-right: -25px;
+        margin-top: -19px;
+        width: 50px;
+      }
+      .slider-pointer:focus {
+        outline: 0;
+      }
+      .slider-pointer:after {
+        content: '';
+        display: block;
+        height: 25px;
+        left: 12px;
+        position: relative;
+        top: 12px;
+        width: 25px;
+      }
+      .slider-pointer:hover {
+        box-shadow: -2px 2px 4px rgba(25, 70, 94, 1), 0px 2px 8px rgba(25, 70, 94, 1);
+        webkit-box-shadow: -2px 2px 4px rgba(25, 70, 94, 1), 0px 2px 8px rgba(25, 70, 94, 1);
+      }
+      .slider-wrapper {
+        padding: 50px 0 50px 0;
+      }
+      .slider-container {
+        position: relative;
+      }
+      @media screen and (max-width: 500px) {
+        .slider-demo form input {
+          display: block;
+          width: 100%;
+          margin-bottom: 12px;
+        }
+      }
+    </style>
+
+    <script>
+      var app = angular.module('demo', ['angular-pure-slider'])
+        .controller('demoCtrl', ['$scope', function ($scope) {
+          $scope.sliderInputValue = 55;
+          $scope.maxValue = 400;
+          $scope.minValue = 20;
+
+          $scope.slider = 55;
+          $scope.min = 20;
+          $scope.max = 400;
+
+          // Updates the sliderInputValue when slider used
+          $scope.$watch('slider', function (newValue) {
+            $scope.sliderInputValue = newValue;
+          });
+
+          $scope.$watch('min', function (newValue) {
+            $scope.minValue= newValue;
+          });
+
+          $scope.$watch('max', function (newValue) {
+            $scope.maxValue= newValue;
+          });
+
+          $scope.increaseSlider = function(){
+            $scope.slider++;
+          };
+
+          $scope.decreaseSlider = function(){
+            $scope.slider--;
+          };
+        }]);
+    </script>
+  </head>
+  <body ng-app="demo" ng-controller="demoCtrl">
+    <h1>Test page with jQuery included</h1>
+    <form>
+        <label for="value">Slider Value</label>
+        <input type="text" id="value" ng-blur="slider=sliderInputValue" ng-model="sliderInputValue"/>
+
+        <label for="min">Min</label>
+        <input type="text" id="min" ng-blur="min=minValue" ng-model="minValue"/>
+
+        <label for="max">Max</label>
+        <input type="text" id="max" ng-blur="max=maxValue" ng-model="maxValue"/>
+
+        <button ng-click="increaseSlider()">+</button>
+        <button ng-click="decreaseSlider()">-</button>
+
+    </form>
+    <div class="slider-container">
+      <div wn-slider ng-model="slider" min="min" max="max" class="slider-wrapper"></div>
+    </div>
+
+    <div></div>
+
+  </body>
+</html>
