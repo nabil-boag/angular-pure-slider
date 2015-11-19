@@ -1,0 +1,7 @@
+{
+  "name": "angular-slider-demo",
+  "dependencies": {
+    "angular": "~1.2.0",
+    "angular-pure-slider": "0.0.2"
+  }
+}

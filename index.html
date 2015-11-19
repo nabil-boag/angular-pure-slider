@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Pure Slider Demo Page</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-pure-slider/app/package/angular-pure-slider.min.js"></script>
+
+    <style>
+      .slider {
+        background-color: #DFF0D8;
+        box-shadow: rgb(201, 216, 194) 0px 1px 0px 0px inset;
+        height: 12px;
+        width: 100%;
+      }
+      .slider-selected {
+        background-color: #5CB85C;
+        box-shadow: rgb(97, 145, 97) 0px 1px 0px 0px inset;
+        float: left;
+        height: 100%;
+      }
+      .slider-pointer {
+        background: #fff;
+        background: linear-gradient(#fff,#f6f6f6) #fff;
+        background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#f6f6f6)) #fff;
+        background: -webkit-linear-gradient(#fff,#f6f6f6) #fff;
+        border-radius: 50%;
+        webkit-border-radius: 50%;
+        box-shadow: -2px 2px 4px rgba(25, 70, 94, 0.6), 0px 2px 8px rgba(25, 70, 94, 0.1);
+        webkit-box-shadow: -2px 2px 4px rgba(25, 70, 94, 0.6), 0px 2px 8px rgba(25, 70, 94, 0.1);
+        cursor: pointer;
+        float: right;
+        height: 50px;
+        margin-right: -25px;
+        margin-top: -19px;
+        width: 50px;
+      }
+      .slider-pointer:focus {
+        outline: 0;
+      }
+      .slider-pointer:after {
+        content: '';
+        display: block;
+        height: 25px;
+        left: 12px;
+        position: relative;
+        top: 12px;
+        width: 25px;
+      }
+      .slider-pointer:hover {
+        box-shadow: -2px 2px 4px rgba(25, 70, 94, 1), 0px 2px 8px rgba(25, 70, 94, 1);
+        webkit-box-shadow: -2px 2px 4px rgba(25, 70, 94, 1), 0px 2px 8px rgba(25, 70, 94, 1);
+      }
+      .slider-wrapper {
+        padding: 50px 0 50px;
+      }
+      .slider-container {
+        position: relative;
+      }
+      @media screen and (max-width: 500px) {
+        .slider-demo form input {
+          display: block;
+          width: 100%;
+          margin-bottom: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <header class="page-header">
+        <div class="media">
+          <a class="pull-left" href="#">
+            <img src="logo.png" width="100">
+          </a>
+
+          <div class="media-body">
+            <h1 class="text-muted">Angular Pure Slider</h1>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <p class="lead">
+          Angular slider component which provides a horizontal slider.
+        </p>
+      </section>
+
+      <section class="slider-demo" ng-app="demo" ng-controller="demoCtrl">
+        <form>
+          <label for="value">Slider Value</label>
+          <input type="text" id="value" ng-blur="slider=sliderInputValue" ng-model="sliderInputValue"/>
+
+          <label for="min">Min</label>
+          <input type="text" id="min" ng-blur="min=minValue" ng-model="minValue"/>
+
+          <label for="max">Max</label>
+          <input type="text" id="max" ng-blur="max=maxValue" ng-model="maxValue"/>
+
+          <button ng-click="decreaseSlider()">-</button>
+          <button ng-click="increaseSlider()">+</button>
+
+        </form>
+        <div class="slider-container">
+          <div wn-slider ng-model="slider" min="min" max="max" class="slider-wrapper"></div>
+        </div>
+      </section>
+
+      <hr>
+
+      <section class="text-center">
+        <iframe src="http://ghbtns.com/github-btn.html?user=wongatech&repo=angular-pure-sliders&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110" height="20"></iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=wongatech&repo=angular-pure-sliders&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110" height="20"></iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=wongatech&repo=angular-pure-sliders&type=follow&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="200" height="20"></iframe>
+        <a class="twitter-share-button"
+          href="https://twitter.com/intent/tweet" data-count="none">
+          Tweet</a>
+        <a href="https://twitter.com/wongatech"
+           class="twitter-follow-button">Follow
+          @wongatech</a>
+        <script>
+          window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+              t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+              t._e.push(f);
+            };
+
+            return t;
+          }(document, "script", "twitter-wjs"));
+        </script>
+      </section>
+      <hr>
+      <footer class="text-center small">
+        <p>&copy; Wonga 2015 -
+          <a href="http://tech.wonga.com" role="button">
+            Wonga tech website
+          </a>
+        </p>
+      </footer>
+    </section>
+
+    <script>
+      var app = angular.module('demo', ['angular-pure-slider'])
+        .controller('demoCtrl', ['$scope',
+            function ($scope) {
+
+            $scope.sliderInputValue = 345;
+            $scope.maxValue = 600;
+            $scope.minValue = 20;
+
+            $scope.slider = 345;
+            $scope.min = 20;
+            $scope.max = 600;
+
+            // Updates the sliderInputValue when slider used
+            $scope.$watch('slider', function (newValue) {
+              $scope.sliderInputValue = newValue;
+              $scope.myMessage = 'The slider value is: ' + newValue;
+            });
+
+            $scope.$watch('min', function (newValue) {
+              $scope.minValue= newValue;
+            });
+
+            $scope.$watch('max', function (newValue) {
+              $scope.maxValue= newValue;
+            });
+
+            $scope.increaseSlider = function () {
+              $scope.slider++;
+            };
+
+            $scope.decreaseSlider = function () {
+              $scope.slider--;
+            };
+        }]);
+    </script>
+  </body>
+</html>
