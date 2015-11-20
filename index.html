@@ -172,13 +172,13 @@
         .controller('demoCtrl', ['$scope',
             function ($scope) {
 
-            $scope.sliderInputValue = 345;
-            $scope.maxValue = 600;
+            $scope.sliderInputValue = 60;
+            $scope.maxValue = 120;
             $scope.minValue = 20;
 
-            $scope.slider = 345;
+            $scope.slider = 60;
             $scope.min = 20;
-            $scope.max = 600;
+            $scope.max = 120;
 
             // Updates the sliderInputValue when slider used
             $scope.$watch('slider', function (newValue) {
