@@ -4,7 +4,7 @@ Angular Pure Slider
 Angular slider component which provides a horizontal slider without third party
 libraries.
 
-Travis Status: [![Build Status](https://travis-ci.org/wongatech/angular-pure-sliders.svg?branch=master)](https://travis-ci.org/wongatech/angular-pure-sliders)
+Travis Status: [![Build Status](https://travis-ci.org/wongatech/angular-pure-slider.svg?branch=master)](https://travis-ci.org/wongatech/angular-pure-slider)
 
 [Demo Page](http://tech.wonga.com/angular-pure-slider/)
 
@@ -26,22 +26,10 @@ Features
 Installation
 ------------
 
-NPM:
-
-```sh
-npm install
-```
-
 Bower:
 
 ```sh
-bower install
-```
-
-Install the ChromeDriver:
-
-```
-./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update
+bower install --save angular-pure-slider
 ```
 
 Usage
@@ -80,8 +68,12 @@ To contribute:
 - Fork the repo
 - Run `npm install`
 - Run `bower install`
+- Install the ChromeDriver
+```
+./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update
+```
 - Run `grunt workflow:dev` to watch for changes, lint, build and run tests as
   you're working
 - Write your unit tests for your change
-- Run the unit+service tests `grunt build test`
+- Run the unit+service tests `grunt build test:local`
 - Update README.md
