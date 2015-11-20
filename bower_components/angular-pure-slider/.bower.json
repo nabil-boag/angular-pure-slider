@@ -16,7 +16,7 @@
     "angular-mocks": "~1.3.14",
     "jquery": "1.7.2"
   },
-  "homepage": "https://github.com/wongatech/angular-pure-sliders",
+  "homepage": "https://github.com/wongatech/angular-pure-slider",
   "version": "0.0.2",
   "_release": "0.0.2",
   "_resolution": {
@@ -24,7 +24,7 @@
     "tag": "0.0.2",
     "commit": "6a555be4d85b745a2ff99e1c147363edab17be02"
   },
-  "_source": "git://github.com/wongatech/angular-pure-sliders.git",
+  "_source": "git://github.com/wongatech/angular-pure-slider.git",
   "_target": "0.0.2",
   "_originalSource": "angular-pure-slider"
 }

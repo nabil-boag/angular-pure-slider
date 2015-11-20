@@ -1,7 +1,10 @@
 {
   "name": "angular-slider-demo",
   "dependencies": {
-    "angular": "~1.2.0",
+    "angular": "~1.3.0",
     "angular-pure-slider": "0.0.2"
+  },
+  "devDependencies": {
+    "angular-pure-slider": "~0.0.2"
   }
 }
