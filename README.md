@@ -26,22 +26,10 @@ Features
 Installation
 ------------
 
-NPM:
-
-```sh
-npm install
-```
-
 Bower:
 
 ```sh
-bower install
-```
-
-Install the ChromeDriver:
-
-```
-./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update
+bower install --save angular-pure-slider
 ```
 
 Usage
@@ -80,8 +68,12 @@ To contribute:
 - Fork the repo
 - Run `npm install`
 - Run `bower install`
+- Install the ChromeDriver
+```
+./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update
+```
 - Run `grunt workflow:dev` to watch for changes, lint, build and run tests as
   you're working
 - Write your unit tests for your change
-- Run the unit+service tests `grunt build test`
+- Run the unit+service tests `grunt build test:local`
 - Update README.md
