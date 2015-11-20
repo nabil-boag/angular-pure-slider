@@ -4,7 +4,7 @@ Angular Pure Slider
 Angular slider component which provides a horizontal slider without third party
 libraries.
 
-Travis Status: [![Build Status](https://travis-ci.org/wongatech/angular-pure-sliders.svg?branch=master)](https://travis-ci.org/wongatech/angular-pure-sliders)
+Travis Status: [![Build Status](https://travis-ci.org/wongatech/angular-pure-slider.svg?branch=master)](https://travis-ci.org/wongatech/angular-pure-slider)
 
 [Demo Page](http://tech.wonga.com/angular-pure-slider/)
 
