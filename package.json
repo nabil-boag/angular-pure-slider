@@ -1,6 +1,9 @@
 {
   "name": "angular-pure-slider",
   "version": "1.0.0",
+  "scripts": {
+    "test": "grunt test:unit"
+  },
   "dependencies": {},
   "devDependencies": {
     "chai": "^2.1.0",
