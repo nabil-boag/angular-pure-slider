@@ -53,17 +53,17 @@ module.exports = function () {
   };
 
   /**
-   *	Gets the slider model value
-   */
-  page.getSliderModelValue = function () {
-    return element(by.model('sliderInputValue')).getAttribute('value');
-  };
-
-  /**
    * Sets the slider ng-model value
    */
   page.setSliderValue = function (value) {
     return element(by.model('sliderInputValue')).clear().sendKeys(value);
+  };
+
+  /**
+   * Gets the slider ng-model value
+   */
+  page.getSliderValue = function () {
+    return element(by.model('sliderInputValue')).getAttribute('value');
   };
 
   page.setSliderRange = function (min, max) {

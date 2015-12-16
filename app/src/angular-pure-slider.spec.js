@@ -141,4 +141,36 @@ describe('wnSlider directive', function () {
       // Assert
       expect(scope.min).toBe(20);
     });
+
+  it('should set the model value to previous value when new value is NaN',
+    function () {
+      // Arrange
+      scope.min = 34;
+      scope.max = 95;
+      scope.slider = 45;
+      scope.$apply();
+
+      // Act
+      scope.slider = 'not a number';
+      scope.$apply();
+
+      // Assert
+      expect(scope.slider).toBe(45);
+    });
+
+  it('should set the model value to previous value when new value is ' +
+    'whitespace', function () {
+      // Arrange
+      scope.min = 34;
+      scope.max = 95;
+      scope.slider = 45;
+      scope.$apply();
+
+      // Act
+      scope.slider = ' ';
+      scope.$apply();
+
+      // Assert
+      expect(scope.slider).toBe(45);
+    });
 });

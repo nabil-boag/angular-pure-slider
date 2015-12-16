@@ -48,8 +48,23 @@ module.exports = function () {
     });
   });
 
+  this.When(/^the input is changed to "([^"]*)"$/, function (value, done) {
+    sp.setSliderValue(value).then(function () {
+      sp.unfocus().then(function () {
+        done();
+      });
+    });
+  });
+
   this.When(/^I click the slider at (\d+)px$/, function (xPixelPosition, done) {
     sp.clickSlider(xPixelPosition).then(function () {
+      done();
+    });
+  });
+
+  this.Then(/^the input should be set to (\d+)$/, function (value, done) {
+    sp.getSliderValue().then(function (modelValue) {
+      value.should.equal(modelValue);
       done();
     });
   });
@@ -64,13 +79,6 @@ module.exports = function () {
       // String comparison to include the percentage symbol
       selectedWidth.trim().should.equal(percentage);
 
-      done();
-    });
-  });
-
-  this.Then(/^the output value should be (\d+)$/, function (value, done) {
-    sp.getSliderModelValue().then(function (modelValue) {
-      value.should.equal(modelValue);
       done();
     });
   });
