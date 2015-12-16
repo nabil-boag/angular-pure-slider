@@ -52,14 +52,15 @@ angular.module('angular-pure-slider', ['angular-pure-slider.value-converter'])
             selected = angular.element(element.find('span')[0]);
 
           /**
-           *	Updates the model value based on a mouse or touch click.
+           * Updates the model value based on a mouse or touch click.
+           *
            * @param TouchEvent/MouseEvent
            */
           var updateModelOnAction = function (e) {
 
             /**
-             *	Set to current position on slider, use the ValueService
-             * to calculate the model percentage value, given a min/max
+             * Set to current position on slider, use the ValueService
+             * to calculate the model percentage value, given a min/max.
              */
             var
               xMin = sliderElement[0].getBoundingClientRect().left,
@@ -100,7 +101,13 @@ angular.module('angular-pure-slider', ['angular-pure-slider.value-converter'])
           /**
            *	Updates the slider presentation when the model value has changed
            */
-          var updateSlider = function (newVal) {
+          var updateSlider = function (newVal, oldValue) {
+            newVal = parseFloat(newVal);
+
+            if (isNaN(newVal)) {
+              newVal = oldValue;
+            }
+
             // Rounds up the model value to the nearest whole number
             $scope[attributes.ngModel] = getValueWithinRange(Math.ceil(newVal));
 
