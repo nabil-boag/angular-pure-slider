@@ -41,7 +41,7 @@ describe('wnSlider directive', function () {
       scope.$apply();
 
       // Assert
-      expect(scope.slider).toBe(95);
+      expect(4).toBe(95);
 
     });
 
